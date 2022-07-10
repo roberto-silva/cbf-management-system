@@ -1,4 +1,4 @@
-package com.roberto.cbf;
+package com.cbf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.roberto.cbf.domain;
+package com.cbf.domain;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
-import static com.roberto.cbf.util.Constants.TEAM;
+import static com.cbf.util.Constants.TEAM;
 
 @Getter
 @Setter
