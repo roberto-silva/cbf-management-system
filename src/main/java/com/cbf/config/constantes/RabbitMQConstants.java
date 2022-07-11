@@ -7,4 +7,8 @@ public class RabbitMQConstants {
 
     public static final String TRANSFER_QUEUE = "TRANSFER_QUEUE";
 
+    public static final String SAVE = "SAVE";
+
+    public static final String UPDATE = "UPDATE";
+
 }
