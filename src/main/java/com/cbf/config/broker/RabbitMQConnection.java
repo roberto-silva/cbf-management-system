@@ -1,4 +1,4 @@
-package com.cbf.config.connections;
+package com.cbf.config.broker;
 
 import com.cbf.config.constantes.RabbitMQConstants;
 import org.springframework.amqp.core.AmqpAdmin;

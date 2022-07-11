@@ -20,7 +20,6 @@ import static com.cbf.util.Constants.TEAM;
 @Table(name = TEAM)
 public class Team implements Serializable {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
