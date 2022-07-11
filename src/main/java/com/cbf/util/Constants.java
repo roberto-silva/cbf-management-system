@@ -1,4 +1,4 @@
-package com.roberto.cbf.util;
+package com.cbf.util;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

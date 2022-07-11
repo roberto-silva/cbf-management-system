@@ -1,4 +1,4 @@
-package com.roberto.cbf;
+package com.cbf;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

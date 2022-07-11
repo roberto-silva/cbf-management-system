@@ -1,16 +1,13 @@
-package com.roberto.cbf.domain;
+package com.cbf.domain;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.time.Instant;
 import java.time.LocalDate;
 
-import static com.roberto.cbf.util.Constants.PLAYER;
+import static com.cbf.util.Constants.PLAYER;
 
 @Getter
 @Setter

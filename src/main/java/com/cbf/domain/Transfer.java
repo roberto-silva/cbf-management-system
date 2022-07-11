@@ -1,4 +1,4 @@
-package com.roberto.cbf.domain;
+package com.cbf.domain;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 import java.time.LocalDate;
 
-import static com.roberto.cbf.util.Constants.TRANSFER;
+import static com.cbf.util.Constants.TRANSFER;
 
 @Getter
 @Setter
