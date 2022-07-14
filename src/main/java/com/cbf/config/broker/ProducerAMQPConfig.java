@@ -1,22 +1,21 @@
 package com.cbf.config.broker;
 
-import com.cbf.config.constantes.RabbitMQConstants;
+import com.cbf.util.Constants;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
 
-@Component
-public class RabbitMQConnection {
 
-    private static final String EXCHANGE_NAME = "amq.direct";
+@Configuration
+public class ProducerAMQPConfig {
 
     private AmqpAdmin amqpAdmin;
 
-    public RabbitMQConnection(AmqpAdmin amqpAdmin) {
+    public ProducerAMQPConfig(AmqpAdmin amqpAdmin) {
         this.amqpAdmin = amqpAdmin;
     }
 
@@ -25,7 +24,7 @@ public class RabbitMQConnection {
     }
 
     private DirectExchange changeDirect() {
-        return new DirectExchange(EXCHANGE_NAME);
+        return new DirectExchange(Constants.EXCHANGE_NAME);
     }
 
     private Binding relationship(Queue queue, DirectExchange exchange) {
@@ -36,9 +35,9 @@ public class RabbitMQConnection {
     private void startingRabbitMQ() {
         DirectExchange exchange = this.changeDirect();
 
-        this.createConnections(RabbitMQConstants.TEAM_QUEUE, exchange);
-        this.createConnections(RabbitMQConstants.PLAYER_QUEUE, exchange);
-        this.createConnections(RabbitMQConstants.TRANSFER_QUEUE, exchange);
+        this.createConnections(Constants.TEAM, exchange);
+        this.createConnections(Constants.PLAYER, exchange);
+        this.createConnections(Constants.TRANSFER, exchange);
     }
 
     private void createConnections(String nameQueue, DirectExchange exchange) {
@@ -48,4 +47,5 @@ public class RabbitMQConnection {
         this.amqpAdmin.declareQueue(queue);
         this.amqpAdmin.declareBinding(connection);
     }
+
 }

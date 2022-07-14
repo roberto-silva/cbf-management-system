@@ -1,5 +1,6 @@
 package com.cbf.domain;
 
+import com.cbf.dtos.TeamDTO;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -32,4 +33,10 @@ public class Team implements Serializable {
     @Size(min = 2, max = 50)
     @Column(name = "locale", nullable = false, length = 100)
     private String locale;
+
+    public Team(TeamDTO team) {
+        this.id = team.getId();
+        this.name = team.getName();
+        this.locale = team.getLocale();
+    }
 }
