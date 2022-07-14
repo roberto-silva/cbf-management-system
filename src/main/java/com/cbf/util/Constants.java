@@ -7,6 +7,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Constants {
 
+
+    /**
+     * RabbitMQ
+     */
+
+    public static final String EXCHANGE_NAME = "amq.direct";
+
     /**
      * Entities
      */
