@@ -1,16 +1,19 @@
 package com.cbf.managementsystemconsumerapi.dtos;
 
-import com.cbf.managementsystemconsumerapi.core.dtos.ModelDTO;
+import com.cbf.managementsystemconsumerapi.core.dtos.AbstractDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TransferDTO extends ModelDTO {
+@EqualsAndHashCode(callSuper = true)
+public class TransferDTO extends AbstractDTO {
 
     private Long id;
 
@@ -21,44 +24,4 @@ public class TransferDTO extends ModelDTO {
     private LocalDate date;
 
     private Float value;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public TeamDTO getOriginTeam() {
-        return originTeam;
-    }
-
-    public void setOriginTeam(TeamDTO originTeam) {
-        this.originTeam = originTeam;
-    }
-
-    public TeamDTO getDestinyTeam() {
-        return destinyTeam;
-    }
-
-    public void setDestinyTeam(TeamDTO destinyTeam) {
-        this.destinyTeam = destinyTeam;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public Float getValue() {
-        return value;
-    }
-
-    public void setValue(Float value) {
-        this.value = value;
-    }
 }

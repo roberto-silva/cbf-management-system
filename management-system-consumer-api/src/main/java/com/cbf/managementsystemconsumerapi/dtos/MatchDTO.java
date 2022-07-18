@@ -13,16 +13,16 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class PlayerDTO extends AbstractDTO {
+public class MatchDTO extends AbstractDTO {
 
     private Long id;
 
     private String name;
 
-    private LocalDate birthDate;
+    private LocalDate date;
 
-    private String country;
+    private TeamDTO teamOne;
 
-    private TeamDTO team;
+    private TeamDTO teamTwo;
 
 }

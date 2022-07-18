@@ -7,22 +7,26 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class PlayerDTO extends AbstractDTO {
+public class TournamentDTO extends AbstractDTO {
 
     private Long id;
 
     private String name;
 
-    private LocalDate birthDate;
+    private LocalDate startDate;
 
-    private String country;
+    private LocalDate endDate;
 
-    private TeamDTO team;
+    private Set<TeamDTO> teams = new HashSet<>();
+
+    private Set<MatchDTO> matches = new HashSet<>();
 
 }

@@ -1,13 +1,12 @@
 package com.cbf.managementsystemconsumerapi.config.broker;
 
-import com.cbf.managementsystemconsumerapi.core.dtos.ModelDTO;
-import com.google.gson.JsonElement;
+import com.cbf.managementsystemconsumerapi.core.dtos.AbstractDTO;
 import lombok.Getter;
 import lombok.ToString;
 
 @Getter
 @ToString
-public class ConsumerDTO<T extends ModelDTO> {
+public class ConsumerDTO<T extends AbstractDTO> {
 
     private T object;
 
