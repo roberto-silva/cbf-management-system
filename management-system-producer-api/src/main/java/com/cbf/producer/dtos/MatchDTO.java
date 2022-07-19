@@ -22,11 +22,11 @@ public class MatchDTO extends ModelDTO {
 
     private String country;
 
-    private Team teamOne;
+    private TeamDTO teamOne;
 
-    private Team teamTwo;
+    private TeamDTO teamTwo;
 
-    private Integer teamOneScore;
+    private Integer teamOneScore = 0;
 
     private Integer teamTwoScore = 0;
 }
