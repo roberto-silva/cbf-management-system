@@ -25,9 +25,6 @@ public class Match implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name", nullable = false, length = 100)
-    private String name;
-
     @Column(name = "date", nullable = false)
     private LocalDate date;
 
@@ -41,5 +38,13 @@ public class Match implements Serializable {
     @ManyToOne
     @JoinColumn(name = "team_two_id")
     private Team teamTwo;
+
+    @Builder.Default
+    @Column(name = "team_one_score", nullable = false)
+    private Integer teamOneScore = 0;
+
+    @Builder.Default
+    @Column(name = "team_two_score", nullable = false)
+    private Integer teamTwoScore = 0;
 
 }

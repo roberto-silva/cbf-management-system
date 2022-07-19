@@ -7,21 +7,26 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import java.time.LocalDate;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class TeamDTO extends ModelDTO {
+public class MatchDTO extends ModelDTO {
 
     private Long id;
 
-    private String name;
+    private LocalDate date;
 
-    private String locale;
+    private String country;
 
-    public TeamDTO(Team team) {
-        this.id = team.getId();
-        this.name = team.getName();
-        this.locale = team.getLocale();
-    }
+    private Team teamOne;
+
+    private Team teamTwo;
+
+    private Integer teamOneScore;
+
+    private Integer teamTwoScore = 0;
 }

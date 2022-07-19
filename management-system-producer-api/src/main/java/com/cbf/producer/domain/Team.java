@@ -6,6 +6,8 @@ import lombok.experimental.SuperBuilder;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import static com.cbf.producer.util.Constants.TEAM;
 
@@ -33,27 +35,10 @@ public class Team implements Serializable {
     @Column(name = "locale", nullable = false, length = 100)
     private String locale;
 
-    public Long getId() {
-        return id;
-    }
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "team_id")
+    @Builder.Default
+    private Set<Player> teams = new HashSet<>();
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLocale() {
-        return locale;
-    }
-
-    public void setLocale(String locale) {
-        this.locale = locale;
-    }
 }

@@ -1,8 +1,10 @@
 package com.cbf.producer.dtos;
 
 import com.cbf.producer.core.dtos.ModelDTO;
+import com.cbf.producer.domain.Player;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
@@ -10,6 +12,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class PlayerDTO extends ModelDTO {
 
     private Long id;
@@ -22,43 +25,11 @@ public class PlayerDTO extends ModelDTO {
 
     private TeamDTO team;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public TeamDTO getTeam() {
-        return team;
-    }
-
-    public void setTeam(TeamDTO team) {
-        this.team = team;
+    public PlayerDTO(Player player) {
+       this.id = player.getId();
+       this.name = player.getName();
+       this.birthDate = player.getBirthDate();
+       this.country = player.getCountry();
+       this.team = new TeamDTO(player.getTeam());
     }
 }
