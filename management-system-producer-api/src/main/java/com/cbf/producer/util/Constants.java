@@ -12,13 +12,7 @@ public final class Constants {
      */
 
     public static final String EXCHANGE_NAME = "amq.direct";
-    public static final String START_QUEUE = "start";
-    public static final String GOAL_QUEUE = "goal";
-    public static final String BREAK_QUEUE = "break";
-    public static final String ADDITION_QUEUE = "addition";
-    public static final String REPLACEMENT_QUEUE = "replacement";
-    public static final String WARNING_QUEUE = "warning";
-    public static final String THE_END_QUEUE = "the_end";
+    public static final String STATUS_QUEUE = "status";
 
     /**
      * Entities
