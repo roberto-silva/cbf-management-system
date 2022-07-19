@@ -14,6 +14,8 @@ public final class Constants {
 
     public static final String EXCHANGE_NAME = "amq.direct";
 
+    public static final String STATUS_QUEUE = "status";
+
     /**
      * Entities
      */
@@ -25,30 +27,10 @@ public final class Constants {
 
 
     /**
-     * Player Events Socket
-     */
-
-    public static final String SAVE_PLAYER = "SAVE_PLAYER";
-
-
-    /**
-     * Team Events Socket
-     */
-
-    public static final String SAVE_TEAM = "SAVE_TEAM";
-
-
-    /**
-     * Transfer Events Socket
-     */
-
-    public static final String SAVE_TRANSFER = "SAVE_TRANSFER";
-
-
-    /**
      * Socket
      */
     public static final String SOCKET = "/socket";
-    public static final String[] SOCKET_CHANEL = {SAVE_PLAYER, SAVE_TEAM, SAVE_TRANSFER};
+
+    public static final String STATUS_CHANEL = "STATUS";
 
 }

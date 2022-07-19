@@ -11,7 +11,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker(Constants.SOCKET_CHANEL);
+        registry.enableSimpleBroker(Constants.STATUS_CHANEL);
     }
 
     @Override

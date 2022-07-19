@@ -15,17 +15,7 @@ public class ConsumerAMQConfig {
 
     @Bean
     public Queue declarePlayerQueue() {
-        return QueueBuilder.durable(Constants.PLAYER).build();
-    }
-
-    @Bean
-    public Queue declareTeamQueue() {
-        return QueueBuilder.durable(Constants.TEAM).build();
-    }
-
-    @Bean
-    public Queue declareTransferQueue() {
-        return QueueBuilder.durable(Constants.TRANSFER).build();
+        return QueueBuilder.durable(Constants.STATUS_QUEUE).build();
     }
 
     @Bean
@@ -33,22 +23,6 @@ public class ConsumerAMQConfig {
         return BindingBuilder.bind(declarePlayerQueue)
                 .to(exchange)
                 .with("/api/players")
-                .noargs();
-    }
-
-    @Bean
-    public Binding declareTeamsBinding(Exchange exchange, Queue declareTeamQueue) {
-        return BindingBuilder.bind(declareTeamQueue)
-                .to(exchange)
-                .with("/api/teams")
-                .noargs();
-    }
-
-    @Bean
-    public Binding declareTransfersBinding(Exchange exchange, Queue declareTransferQueue) {
-        return BindingBuilder.bind(declareTransferQueue)
-                .to(exchange)
-                .with("/api/transfers")
                 .noargs();
     }
 }

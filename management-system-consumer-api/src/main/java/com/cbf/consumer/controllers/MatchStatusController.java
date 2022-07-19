@@ -1,7 +1,7 @@
 package com.cbf.consumer.controllers;
 
-import com.cbf.consumer.dtos.TeamDTO;
-import com.cbf.consumer.services.TeamService;
+import com.cbf.consumer.dtos.MatchStatusDTO;
+import com.cbf.consumer.services.MatchStatusService;
 import com.cbf.consumer.util.Constants;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -14,19 +14,15 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin
 @Controller
-public class TeamController {
+public class MatchStatusController {
 
     @Autowired
-    private TeamService service;
+    private MatchStatusService service;
 
-    @RabbitListener(queues = Constants.TEAM)
+    @RabbitListener(queues = Constants.STATUS_QUEUE)
     public void consumer(Message message) {
         JsonObject jsonObject = new JsonParser().parse(new String(message.getBody())).getAsJsonObject();
-        TeamDTO teamDTO = new Gson().fromJson(jsonObject.get("object"), TeamDTO.class);
-        String event = new Gson().fromJson(jsonObject.get("event"), String.class);
-        if (event.equals(Constants.SAVE_TEAM)) {
-            this.service.save(teamDTO);
-        }
-
+        MatchStatusDTO matchStatus = new Gson().fromJson(jsonObject, MatchStatusDTO.class);
+        this.service.sendMessageToWebSocket(matchStatus);
     }
 }

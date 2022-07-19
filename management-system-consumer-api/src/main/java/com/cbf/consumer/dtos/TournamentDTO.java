@@ -1,6 +1,6 @@
 package com.cbf.consumer.dtos;
 
-import com.cbf.consumer.core.dtos.AbstractDTO;
+import com.cbf.consumer.core.dtos.ModelDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,7 +15,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class TournamentDTO extends AbstractDTO {
+public class TournamentDTO extends ModelDTO {
 
     private Long id;
 
