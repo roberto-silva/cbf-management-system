@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Constants {
 
-
     /**
      * RabbitMQ
      */
 
     public static final String EXCHANGE_NAME = "amq.direct";
+    public static final String STATUS_QUEUE = "status";
 
     /**
      * Entities
@@ -22,25 +22,4 @@ public final class Constants {
     public static final String TRANSFER = "TRANSFER";
     public static final String MATCH = "MATCH";
     public static final String TOURNAMENT = "TOURNAMENT";
-
-
-    /**
-     * Player Events
-     */
-
-    public static final String SAVE_PLAYER = "SAVE_PLAYER";
-
-
-    /**
-     * Team Events
-     */
-
-    public static final String SAVE_TEAM= "SAVE_TEAM";
-
-
-    /**
-     * Transfer Events
-     */
-
-    public static final String SAVE_TRANSFER = "SAVE_TRANSFER";
 }

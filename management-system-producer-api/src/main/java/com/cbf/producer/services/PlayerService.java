@@ -1,12 +1,12 @@
 package com.cbf.producer.services;
 
-import com.cbf.producer.config.broker.ProducerAMQPService;
 import com.cbf.producer.domain.Player;
 import com.cbf.producer.dtos.PlayerDTO;
 import com.cbf.producer.repositories.PlayerRepository;
-import com.cbf.producer.util.Constants;
 import lombok.AllArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,14 +15,15 @@ import org.springframework.transaction.annotation.Transactional;
 @AllArgsConstructor
 public class PlayerService {
 
-    private ProducerAMQPService<PlayerDTO> queueService;
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
     private PlayerRepository playerRepository;
 
     public Player save(PlayerDTO playerDTO) {
         Player player = new Player();
         BeanUtils.copyProperties(playerDTO, player);
         player = playerRepository.save(player);
-        sendToQueue(playerDTO);
+        rabbitTemplate.convertAndSend(playerDTO);
         return player;
     }
 
@@ -30,16 +31,12 @@ public class PlayerService {
         Player player = new Player();
         BeanUtils.copyProperties(playerDTO, player);
         player = playerRepository.save(player);
-        sendToQueue(playerDTO);
+        rabbitTemplate.convertAndSend(playerDTO);
         return player;
     }
 
     public Player getById(Long id) {
         return playerRepository.findById(id).orElseThrow();
-    }
-
-    private void sendToQueue(PlayerDTO playerDTO) {
-        this.queueService.sendToRabbit(playerDTO, Constants.PLAYER, Constants.SAVE_PLAYER);
     }
 
 }

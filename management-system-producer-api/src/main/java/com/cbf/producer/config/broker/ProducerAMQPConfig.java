@@ -35,9 +35,7 @@ public class ProducerAMQPConfig {
     private void startingRabbitMQ() {
         DirectExchange exchange = this.changeDirect();
 
-        this.createConnections(Constants.TEAM, exchange);
-        this.createConnections(Constants.PLAYER, exchange);
-        this.createConnections(Constants.TRANSFER, exchange);
+        this.createConnections(Constants.STATUS_QUEUE, exchange);
     }
 
     private void createConnections(String nameQueue, DirectExchange exchange) {
