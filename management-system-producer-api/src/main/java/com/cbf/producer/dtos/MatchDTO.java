@@ -1,6 +1,7 @@
 package com.cbf.producer.dtos;
 
 import com.cbf.producer.core.dtos.ModelDTO;
+import com.cbf.producer.domain.Match;
 import com.cbf.producer.domain.Team;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,4 +30,14 @@ public class MatchDTO extends ModelDTO {
     private Integer teamOneScore = 0;
 
     private Integer teamTwoScore = 0;
+
+    public MatchDTO(Match match) {
+        this.id = match.getId();
+        this.date = match.getDate();
+        this.country = match.getCountry();
+        this.teamOne = new TeamDTO(match.getTeamOne());
+        this.teamTwo = new TeamDTO(match.getTeamTwo());
+        this.teamOneScore = match.getTeamOneScore();
+        this.teamTwoScore = match.getTeamTwoScore();
+    }
 }
