@@ -1,8 +1,10 @@
 package com.cbf.producer.dtos;
 
 import com.cbf.producer.core.dtos.ModelDTO;
+import com.cbf.producer.domain.Transfer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
@@ -10,6 +12,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class TransferDTO extends ModelDTO {
 
     private Long id;
@@ -22,43 +25,11 @@ public class TransferDTO extends ModelDTO {
 
     private Float value;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public TeamDTO getOriginTeam() {
-        return originTeam;
-    }
-
-    public void setOriginTeam(TeamDTO originTeam) {
-        this.originTeam = originTeam;
-    }
-
-    public TeamDTO getDestinyTeam() {
-        return destinyTeam;
-    }
-
-    public void setDestinyTeam(TeamDTO destinyTeam) {
-        this.destinyTeam = destinyTeam;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public Float getValue() {
-        return value;
-    }
-
-    public void setValue(Float value) {
-        this.value = value;
+    public TransferDTO(Transfer transfer) {
+        this.id = transfer.getId();
+        this.originTeam = new TeamDTO(transfer.getOriginTeam());
+        this.destinyTeam = new TeamDTO(transfer.getDestinyTeam());
+        this.date = transfer.getDate();
+        this.value = transfer.getValue();
     }
 }
