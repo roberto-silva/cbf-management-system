@@ -5,6 +5,7 @@ import com.cbf.producer.dtos.MatchDTO;
 import com.cbf.producer.services.MatchService;
 import com.cbf.producer.util.RequestUtil;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import javax.validation.Valid;
 @RequestMapping("v1/api/matches")
 public class MatchController {
 
+    @Autowired
     private MatchService service;
 
     @PostMapping

@@ -6,6 +6,7 @@ import com.cbf.producer.dtos.PlayerDTO;
 import com.cbf.producer.repositories.PlayerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -15,15 +16,17 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @AllArgsConstructor
 public class PlayerService {
-
+    @Autowired
     private PlayerRepository repository;
 
+    @Transactional
     public Player save(PlayerDTO playerDTO) {
         Player player = new Player();
         BeanUtils.copyProperties(playerDTO, player);
         return repository.save(player);
     }
 
+    @Transactional
     public Player update(Long id, PlayerDTO playerDTO) {
         Player player = getById(id);
         BeanUtils.copyProperties(playerDTO, player);

@@ -6,6 +6,7 @@ import com.cbf.producer.dtos.TournamentDTO;
 import com.cbf.producer.services.TournamentService;
 import com.cbf.producer.util.RequestUtil;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ import javax.validation.Valid;
 @CrossOrigin("*")
 @RequestMapping("v1/api/tournaments")
 public class TournamentController {
-
+    @Autowired
     private TournamentService service;
 
     @PostMapping

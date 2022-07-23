@@ -16,20 +16,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @AllArgsConstructor
 @NoArgsConstructor
 public class TeamService {
-
+    @Autowired
     private TeamRepository repository;
 
+    @Transactional
     public Team save(TeamDTO teamDTO) {
         Team team = new Team();
         BeanUtils.copyProperties(teamDTO, team);
         return repository.save(team);
     }
 
+    @Transactional
     public Team update(Long id, TeamDTO teamDTO) {
         Team team = getById(id);
         BeanUtils.copyProperties(teamDTO, team);

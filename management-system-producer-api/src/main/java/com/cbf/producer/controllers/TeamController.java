@@ -5,6 +5,7 @@ import com.cbf.producer.dtos.TeamDTO;
 import com.cbf.producer.services.TeamService;
 import com.cbf.producer.util.RequestUtil;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ import javax.validation.Valid;
 @CrossOrigin("*")
 @RequestMapping("v1/api/teams")
 public class TeamController {
-
+    @Autowired
     private TeamService service;
 
     @PostMapping

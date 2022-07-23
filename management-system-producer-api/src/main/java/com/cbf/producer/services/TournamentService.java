@@ -13,6 +13,7 @@ import com.cbf.producer.util.Constants;
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -24,17 +25,23 @@ import java.time.LocalDate;
 @Transactional
 @AllArgsConstructor
 public class TournamentService {
-
+    @Autowired
     private TournamentRepository repository;
+
+    @Autowired
     private MatchService matchService;
+
+    @Autowired
     private RabbitTemplate rabbitTemplate;
 
+    @Transactional
     public Tournament save(TournamentDTO matchDTO) {
         Tournament match = new Tournament();
         BeanUtils.copyProperties(matchDTO, match);
         return repository.save(match);
     }
 
+    @Transactional
     public Tournament update(Long id, TournamentDTO matchDTO) {
         Tournament match = getById(id);
         BeanUtils.copyProperties(matchDTO, match);

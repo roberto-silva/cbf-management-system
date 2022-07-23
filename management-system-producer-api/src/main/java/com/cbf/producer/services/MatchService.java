@@ -6,6 +6,7 @@ import com.cbf.producer.dtos.MatchDTO;
 import com.cbf.producer.repositories.MatchRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -15,15 +16,17 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @AllArgsConstructor
 public class MatchService {
-
+    @Autowired
     private MatchRepository repository;
 
+    @Transactional
     public Match save(MatchDTO matchDTO) {
         Match match = new Match();
         BeanUtils.copyProperties(matchDTO, match);
         return repository.save(match);
     }
 
+    @Transactional
     public Match update(Long id, MatchDTO matchDTO) {
         Match match = getById(id);
         BeanUtils.copyProperties(matchDTO, match);

@@ -5,21 +5,26 @@ import com.cbf.producer.domain.Transfer;
 import com.cbf.producer.dtos.TransferDTO;
 import com.cbf.producer.repositories.TransferRepository;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TransferService {
 
+    @Autowired
     private TransferRepository repository;
 
+    @Transactional
     public Transfer save(TransferDTO transferDTO) {
         Transfer transfer = new Transfer();
         BeanUtils.copyProperties(transferDTO, transfer);
         return repository.save(transfer);
     }
 
+    @Transactional
     public Transfer update(Long id, TransferDTO transferDTO) {
         Transfer transfer = getById(id);
         BeanUtils.copyProperties(transferDTO, transfer);
