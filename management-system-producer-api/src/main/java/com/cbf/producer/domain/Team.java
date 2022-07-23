@@ -18,7 +18,6 @@ import static com.cbf.producer.util.Constants.TEAM;
 @Entity
 @SuperBuilder
 @AllArgsConstructor
-@NoArgsConstructor
 @Table(name = TEAM)
 public class Team implements Serializable {
 

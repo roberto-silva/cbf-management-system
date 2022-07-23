@@ -15,7 +15,6 @@ import static com.cbf.producer.util.Constants.TRANSFER;
 @Entity
 @SuperBuilder
 @AllArgsConstructor
-@NoArgsConstructor
 @Table(name = TRANSFER)
 public class Transfer {
 

@@ -17,7 +17,6 @@ import static com.cbf.producer.util.Constants.MATCH;
 @Entity
 @SuperBuilder
 @AllArgsConstructor
-@NoArgsConstructor
 @Table(name = MATCH)
 public class Match implements Serializable {
 

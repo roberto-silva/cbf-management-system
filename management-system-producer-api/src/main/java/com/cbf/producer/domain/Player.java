@@ -16,7 +16,6 @@ import static com.cbf.producer.util.Constants.PLAYER;
 @Entity
 @SuperBuilder
 @AllArgsConstructor
-@NoArgsConstructor
 @Table(name = PLAYER)
 public class Player implements Serializable {
 
