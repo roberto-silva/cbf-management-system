@@ -5,6 +5,7 @@ import com.cbf.producer.controllers.exceptions.NotFoundException;
 import com.cbf.producer.domain.Match;
 import com.cbf.producer.domain.Tournament;
 import com.cbf.producer.domain.enums.Status;
+import com.cbf.producer.dtos.MatchAdditionalTimeDTO;
 import com.cbf.producer.dtos.MatchDTO;
 import com.cbf.producer.dtos.TournamentDTO;
 import com.cbf.producer.repositories.TournamentRepository;
@@ -87,6 +88,13 @@ public class TournamentService {
         rabbitTemplate.convertAndSend(new MatchDTO(match));
     }
 
+    public void addTimeInMatch(Long id, Long matchId, MatchAdditionalTimeDTO matchAdditionalTimeDTO) {
+        Match match = getMatchByTournamentAndMatchId(id, matchId);
+        match.setTime(match.getTime() + matchAdditionalTimeDTO.getAdditionalTime());
+        match = this.matchService.update(id, new MatchDTO(match));
+        rabbitTemplate.convertAndSend(new MatchDTO(match));
+    }
+
     private Match getMatchByTournamentAndMatchId(Long id, Long matchId) {
         Tournament tournament = getById(id);
         return tournament.getMatches().stream()
@@ -94,4 +102,6 @@ public class TournamentService {
                 .findFirst()
                 .orElseThrow(() -> new BusinessRuleException("Match not found in this tournament."));
     }
+
+
 }

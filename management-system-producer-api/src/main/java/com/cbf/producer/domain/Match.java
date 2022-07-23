@@ -52,4 +52,8 @@ public class Match implements Serializable {
     @Column(name = "status", nullable = false)
     private Status status = Status.NOT_STARTED;
 
+    @Builder.Default
+    @Column(name = "time", nullable = false)
+    private Double time = 90.00;
+
 }
