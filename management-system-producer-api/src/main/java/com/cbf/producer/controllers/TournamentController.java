@@ -57,6 +57,7 @@ public class TournamentController {
     public ResponseEntity<Void> startMatchById(@PathVariable Long id,
                                                @PathVariable Long matchId,
                                                @Valid @RequestBody TeamDTO teamDTO) {
+        System.out.println(matchId);
         this.service.startMatch(id, matchId);
         return ResponseEntity.noContent().build();
     }

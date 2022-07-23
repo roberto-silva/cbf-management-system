@@ -9,6 +9,7 @@ import com.cbf.producer.dtos.MatchAdditionalTimeDTO;
 import com.cbf.producer.dtos.MatchDTO;
 import com.cbf.producer.dtos.TournamentDTO;
 import com.cbf.producer.repositories.TournamentRepository;
+import com.cbf.producer.util.Constants;
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
@@ -58,7 +59,7 @@ public class TournamentService {
         Match match = getMatchByTournamentAndMatchId(id, matchId);
         match.setDate(LocalDate.now());
         match = this.matchService.update(id, new MatchDTO(match));
-        rabbitTemplate.convertAndSend(new MatchDTO(match));
+        rabbitTemplate.convertAndSend(Constants.EXCHANGE_NAME, Constants.STATUS_QUEUE, new MatchDTO(match));
     }
 
     public void golInMatch(Long id, Long matchId, Long teamId) {
@@ -71,28 +72,28 @@ public class TournamentService {
         }
 
         match = this.matchService.update(id, new MatchDTO(match));
-        rabbitTemplate.convertAndSend(new MatchDTO(match));
+        rabbitTemplate.convertAndSend(Constants.EXCHANGE_NAME, Constants.STATUS_QUEUE, new MatchDTO(match));
     }
 
     public void breakMatch(Long id, Long matchId) {
         Match match = getMatchByTournamentAndMatchId(id, matchId);
         match.setStatus(Status.BREAK);
         match = this.matchService.update(id, new MatchDTO(match));
-        rabbitTemplate.convertAndSend(new MatchDTO(match));
+        rabbitTemplate.convertAndSend(Constants.EXCHANGE_NAME, Constants.STATUS_QUEUE, new MatchDTO(match));
     }
 
     public void endMatch(Long id, Long matchId) {
         Match match = getMatchByTournamentAndMatchId(id, matchId);
         match.setStatus(Status.FINISHED);
         match = this.matchService.update(id, new MatchDTO(match));
-        rabbitTemplate.convertAndSend(new MatchDTO(match));
+        rabbitTemplate.convertAndSend(Constants.EXCHANGE_NAME, Constants.STATUS_QUEUE, new MatchDTO(match));
     }
 
     public void addTimeInMatch(Long id, Long matchId, MatchAdditionalTimeDTO matchAdditionalTimeDTO) {
         Match match = getMatchByTournamentAndMatchId(id, matchId);
         match.setTime(match.getTime() + matchAdditionalTimeDTO.getAdditionalTime());
         match = this.matchService.update(id, new MatchDTO(match));
-        rabbitTemplate.convertAndSend(new MatchDTO(match));
+        rabbitTemplate.convertAndSend(Constants.EXCHANGE_NAME, Constants.STATUS_QUEUE, new MatchDTO(match));
     }
 
     private Match getMatchByTournamentAndMatchId(Long id, Long matchId) {
