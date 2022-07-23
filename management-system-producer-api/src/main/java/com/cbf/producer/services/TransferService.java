@@ -2,13 +2,9 @@ package com.cbf.producer.services;
 
 import com.cbf.producer.controllers.exceptions.NotFoundException;
 import com.cbf.producer.domain.Transfer;
-import com.cbf.producer.domain.Transfer;
 import com.cbf.producer.dtos.TransferDTO;
 import com.cbf.producer.repositories.TransferRepository;
-import com.cbf.producer.repositories.TransferRepository;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
