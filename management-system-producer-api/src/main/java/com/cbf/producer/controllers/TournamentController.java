@@ -55,8 +55,7 @@ public class TournamentController {
 
     @PatchMapping(value = "/{id}/matchs/{matchId}/start")
     public ResponseEntity<Void> startMatchById(@PathVariable Long id,
-                                               @PathVariable Long matchId,
-                                               @Valid @RequestBody TeamDTO teamDTO) {
+                                               @PathVariable Long matchId) {
         this.service.startMatch(id, matchId);
         return ResponseEntity.noContent().build();
     }
@@ -64,8 +63,7 @@ public class TournamentController {
     @PatchMapping(value = "/{id}/matchs/{matchId}/teams/{teamsId}/gol")
     public ResponseEntity<Void> golInMatch(@PathVariable Long id,
                                            @PathVariable Long matchId,
-                                           @PathVariable Long teamsId,
-                                           @Valid @RequestBody TeamDTO teamDTO) {
+                                           @PathVariable Long teamsId) {
         this.service.golInMatch(id, matchId, teamsId);
         return ResponseEntity.noContent().build();
     }
