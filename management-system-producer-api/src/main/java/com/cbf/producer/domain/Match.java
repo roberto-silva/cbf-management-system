@@ -1,5 +1,6 @@
 package com.cbf.producer.domain;
 
+import com.cbf.producer.domain.enums.Status;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -46,5 +47,9 @@ public class Match implements Serializable {
     @Builder.Default
     @Column(name = "team_two_score", nullable = false)
     private Integer teamTwoScore = 0;
+
+    @Builder.Default
+    @Column(name = "status", nullable = false)
+    private Status status = Status.NOT_STARTED;
 
 }
