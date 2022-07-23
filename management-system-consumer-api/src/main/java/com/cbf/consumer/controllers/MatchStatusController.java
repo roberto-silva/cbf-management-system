@@ -21,8 +21,9 @@ public class MatchStatusController {
 
     @RabbitListener(queues = Constants.STATUS_QUEUE)
     public void consumer(Message message) {
-        JsonObject jsonObject = new JsonParser().parse(new String(message.getBody())).getAsJsonObject();
-        MatchStatusDTO matchStatus = new Gson().fromJson(jsonObject, MatchStatusDTO.class);
-        this.service.sendMessageToWebSocket(matchStatus);
+        System.out.println(message);
+//        JsonObject jsonObject = new JsonParser().parse(new String(message.getBody())).getAsJsonObject();
+//        MatchStatusDTO matchStatus = new Gson().fromJson(jsonObject, MatchStatusDTO.class);
+//        this.service.sendMessageToWebSocket(matchStatus);
     }
 }
