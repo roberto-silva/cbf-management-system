@@ -19,7 +19,6 @@ import static com.cbf.producer.util.Constants.TOURNAMENT;
 @Entity
 @SuperBuilder
 @AllArgsConstructor
-@NoArgsConstructor
 @Table(name = TOURNAMENT)
 public class Tournament implements Serializable {
 
