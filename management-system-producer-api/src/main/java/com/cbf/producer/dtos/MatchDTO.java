@@ -3,10 +3,8 @@ package com.cbf.producer.dtos;
 import com.cbf.producer.core.dtos.ModelDTO;
 import com.cbf.producer.domain.Match;
 import com.cbf.producer.domain.Team;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import com.cbf.producer.domain.enums.Status;
+import lombok.*;
 
 import javax.persistence.Column;
 import java.time.LocalDate;
@@ -31,6 +29,10 @@ public class MatchDTO extends ModelDTO {
 
     private Integer teamTwoScore = 0;
 
+    private Status status;
+
+    private Double time;
+
     public MatchDTO(Match match) {
         this.id = match.getId();
         this.date = match.getDate();
@@ -39,5 +41,7 @@ public class MatchDTO extends ModelDTO {
         this.teamTwo = new TeamDTO(match.getTeamTwo());
         this.teamOneScore = match.getTeamOneScore();
         this.teamTwoScore = match.getTeamTwoScore();
+        this.status = match.getStatus();
+        this.time = match.getTime();
     }
 }
