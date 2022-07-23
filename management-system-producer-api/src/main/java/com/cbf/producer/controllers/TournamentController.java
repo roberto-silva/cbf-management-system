@@ -1,6 +1,9 @@
 package com.cbf.producer.controllers;
 
+import com.cbf.producer.domain.Team;
 import com.cbf.producer.domain.Tournament;
+import com.cbf.producer.dtos.MatchAdditionalTimeDTO;
+import com.cbf.producer.dtos.TeamDTO;
 import com.cbf.producer.dtos.TournamentDTO;
 import com.cbf.producer.services.TournamentService;
 import com.cbf.producer.util.RequestUtil;
@@ -47,6 +50,45 @@ public class TournamentController {
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping(value = "/{id}/matchs/{matchId}/start")
+    public ResponseEntity<Void> startMatchById(@PathVariable Long id,
+                                               @PathVariable Long matchId,
+                                               @Valid @RequestBody TeamDTO teamDTO) {
+        this.service.startMatch(id, matchId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping(value = "/{id}/matchs/{matchId}/teams/{teamsId}/gol")
+    public ResponseEntity<Void> golInMatch(@PathVariable Long id,
+                                           @PathVariable Long matchId,
+                                           @PathVariable Long teamsId,
+                                           @Valid @RequestBody TeamDTO teamDTO) {
+        this.service.golInMatch(id, matchId, teamsId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping(value = "/{id}/matchs/{matchId}/break")
+    public ResponseEntity<Void> breakMatch(@PathVariable Long id,
+                                           @PathVariable Long matchId) {
+        this.service.breakMatch(id, matchId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping(value = "/{id}/matchs/{matchId}/add-time")
+    public ResponseEntity<Void> addTimeInMatch(@PathVariable Long id,
+                                               @PathVariable Long matchId,
+                                               @RequestBody MatchAdditionalTimeDTO matchAdditionalTimeDTO) {
+        this.service.addTimeInMatch(id, matchId, matchAdditionalTimeDTO);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping(value = "/{id}/matchs/{matchId}/end")
+    public ResponseEntity<Void> endMatch(@PathVariable Long id,
+                                         @PathVariable Long matchId) {
+        this.service.endMatch(id, matchId);
         return ResponseEntity.noContent().build();
     }
 }
