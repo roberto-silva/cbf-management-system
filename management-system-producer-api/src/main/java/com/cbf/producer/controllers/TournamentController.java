@@ -16,7 +16,7 @@ import javax.validation.Valid;
 @RestController
 @AllArgsConstructor
 @CrossOrigin("*")
-@RequestMapping("v1/api/transfers")
+@RequestMapping("v1/api/tournaments")
 public class TournamentController {
 
     private TournamentService service;
