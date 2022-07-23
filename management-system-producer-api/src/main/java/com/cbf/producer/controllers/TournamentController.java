@@ -1,9 +1,7 @@
 package com.cbf.producer.controllers;
 
-import com.cbf.producer.domain.Team;
 import com.cbf.producer.domain.Tournament;
 import com.cbf.producer.dtos.MatchAdditionalTimeDTO;
-import com.cbf.producer.dtos.TeamDTO;
 import com.cbf.producer.dtos.TournamentDTO;
 import com.cbf.producer.services.TournamentService;
 import com.cbf.producer.util.RequestUtil;
@@ -16,9 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@CrossOrigin("v1/api")
-@RequestMapping("/tournaments")
 @AllArgsConstructor
+@CrossOrigin("*")
+@RequestMapping("v1/api/transfers")
 public class TournamentController {
 
     private TournamentService service;

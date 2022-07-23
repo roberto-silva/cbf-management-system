@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@CrossOrigin("v1/api")
-@RequestMapping("/players")
 @AllArgsConstructor
+@CrossOrigin("*")
+@RequestMapping("v1/api/players")
 public class PlayerController {
 
     private PlayerService service;

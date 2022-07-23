@@ -14,8 +14,8 @@ import javax.validation.Valid;
 
 @RestController
 @AllArgsConstructor
-@CrossOrigin("v1/api")
-@RequestMapping("/transfers")
+@CrossOrigin("*")
+@RequestMapping("v1/api/transfers")
 public class TransferController {
 
     private TransferService service;

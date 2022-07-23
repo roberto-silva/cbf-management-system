@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@AllArgsConstructor
+
 @RestController
-@CrossOrigin("v1/api")
-@RequestMapping("/teams")
+@AllArgsConstructor
+@CrossOrigin("*")
+@RequestMapping("v1/api/teams")
 public class TeamController {
 
     private TeamService service;
