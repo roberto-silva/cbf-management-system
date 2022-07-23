@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@CrossOrigin("v1/api")
-@RequestMapping("/tournaments")
 @AllArgsConstructor
+@CrossOrigin("*")
+@RequestMapping("v1/api/transfers")
 public class TournamentController {
 
     private TournamentService service;

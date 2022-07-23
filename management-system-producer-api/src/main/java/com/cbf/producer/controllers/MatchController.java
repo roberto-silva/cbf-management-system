@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@CrossOrigin("v1/api")
-@RequestMapping("/matches")
 @AllArgsConstructor
+@CrossOrigin("*")
+@RequestMapping("v1/api/matches")
 public class MatchController {
 
     private MatchService service;

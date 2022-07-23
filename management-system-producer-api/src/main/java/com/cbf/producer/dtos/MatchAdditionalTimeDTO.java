@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class MatchAdditionalTimeDTO extends ModelDTO {
+
     private Long id;
+
     private Double additionalTime;
 }
