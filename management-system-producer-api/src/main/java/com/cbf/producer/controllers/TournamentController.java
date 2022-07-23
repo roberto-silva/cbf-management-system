@@ -1,9 +1,7 @@
 package com.cbf.producer.controllers;
 
-import com.cbf.producer.domain.Team;
 import com.cbf.producer.domain.Tournament;
 import com.cbf.producer.dtos.MatchAdditionalTimeDTO;
-import com.cbf.producer.dtos.TeamDTO;
 import com.cbf.producer.dtos.TournamentDTO;
 import com.cbf.producer.services.TournamentService;
 import com.cbf.producer.util.RequestUtil;
@@ -55,9 +53,7 @@ public class TournamentController {
 
     @PatchMapping(value = "/{id}/matchs/{matchId}/start")
     public ResponseEntity<Void> startMatchById(@PathVariable Long id,
-                                               @PathVariable Long matchId,
-                                               @Valid @RequestBody TeamDTO teamDTO) {
-        System.out.println(matchId);
+                                               @PathVariable Long matchId) {
         this.service.startMatch(id, matchId);
         return ResponseEntity.noContent().build();
     }
@@ -65,8 +61,7 @@ public class TournamentController {
     @PatchMapping(value = "/{id}/matchs/{matchId}/teams/{teamsId}/gol")
     public ResponseEntity<Void> golInMatch(@PathVariable Long id,
                                            @PathVariable Long matchId,
-                                           @PathVariable Long teamsId,
-                                           @Valid @RequestBody TeamDTO teamDTO) {
+                                           @PathVariable Long teamsId) {
         this.service.golInMatch(id, matchId, teamsId);
         return ResponseEntity.noContent().build();
     }

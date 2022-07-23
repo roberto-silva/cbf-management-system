@@ -36,8 +36,7 @@ public class Tournament implements Serializable {
     @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "tournament_id")
+    @ManyToMany(fetch = FetchType.EAGER)
     @Builder.Default
     private Set<Team> teams = new HashSet<>();
 
