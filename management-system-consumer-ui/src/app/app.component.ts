@@ -6,13 +6,63 @@ import * as SockJS from 'sockjs-client';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 
+  status = Status;
+
   private stompClient: Stomp.Client;
 
-  matchList: Match[] = [];
+  private teamOne: Team = new Team({id: 1, name: 'teamOne', locale: 'rio'});
+  private teamTwo: Team = new Team({id: 2, name: 'teamTwo', locale: 'rio'});
+
+  matchList: Match[] = [
+    // {
+    //   id: 1,
+    //   date: new Date(),
+    //   country: 'rio',
+    //   teamOne: this.teamOne,
+    //   teamTwo: this.teamTwo,
+    //   teamOneScore: 0,
+    //   teamTwoScore: 0,
+    //   status: Status.NOT_STARTED,
+    //   time: 0
+    // },
+    // {
+    //   id: 1,
+    //   date: new Date(),
+    //   country: 'rio',
+    //   teamOne: this.teamOne,
+    //   teamTwo: this.teamTwo,
+    //   teamOneScore: 0,
+    //   teamTwoScore: 0,
+    //   status: Status.FINISHED,
+    //   time: 0
+    // },
+    // {
+    //   id: 1,
+    //   date: new Date(),
+    //   country: 'rio',
+    //   teamOne: this.teamOne,
+    //   teamTwo: this.teamTwo,
+    //   teamOneScore: 0,
+    //   teamTwoScore: 0,
+    //   status: Status.STARTED,
+    //   time: 0
+    // },
+    // {
+    //   id: 1,
+    //   date: new Date(),
+    //   country: 'rio',
+    //   teamOne: this.teamOne,
+    //   teamTwo: this.teamTwo,
+    //   teamOneScore: 0,
+    //   teamTwoScore: 0,
+    //   status: Status.BREAK,
+    //   time: 0
+    // }
+  ];
 
   constructor() {
   }
@@ -37,6 +87,8 @@ export class AppComponent implements OnInit {
   }
 
   private isExistSocket(match: Match): void {
+    const newMatch: Match = match;
+    newMatch.date = new Date(match.date);
     if (this.matchList.length) {
       let currentIndex = 0;
       let isExist = false;
@@ -47,12 +99,29 @@ export class AppComponent implements OnInit {
         }
       });
       if (isExist) {
-        this.matchList[currentIndex] = match;
+        this.matchList[currentIndex] = newMatch;
       } else {
-        this.matchList.push(match);
+        this.matchList.push(newMatch);
       }
     } else {
-      this.matchList.push(match);
+      this.matchList.push(newMatch);
+    }
+  }
+
+  isStatus(statusMatch: any, status: Status): boolean {
+    return statusMatch === status;
+  }
+
+  getStatus(status: Status): string {
+    switch (status) {
+      case Status.BREAK:
+        return 'Break';
+      case Status.FINISHED:
+        return 'Finished';
+      case Status.NOT_STARTED:
+        return 'Not Started';
+      case Status.STARTED:
+        return 'Started';
     }
   }
 
@@ -71,10 +140,10 @@ export class Team {
 }
 
 export enum Status {
-  NOT_STARTED,
-  STARTED,
-  BREAK,
-  FINISHED
+  NOT_STARTED = 0,
+  STARTED = 1,
+  BREAK = 2,
+  FINISHED = 3
 }
 
 export class Match {
@@ -85,7 +154,7 @@ export class Match {
   teamTwo: Team;
   teamOneScore: number;
   teamTwoScore: number;
-  status: Status = Status.NOT_STARTED;
+  status: Status | any;
   time: number;
 
   constructor(obj: any) {
@@ -96,7 +165,7 @@ export class Match {
     this.teamTwo = obj.teamTwo ? obj.teamTwo : null;
     this.teamOneScore = obj.teamOneScore ? obj.teamOneScore : 0;
     this.teamTwoScore = obj.teamTwoScore ? obj.teamTwoScore : 0;
-    this.status = obj.status ? obj.status : null;
+    this.status = obj.status ? obj.status : Status.NOT_STARTED;
     this.time = obj.time ? obj.time : null;
   }
 }
