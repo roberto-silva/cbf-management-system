@@ -2,6 +2,7 @@ package com.cbf.producer.services;
 
 import com.cbf.producer.controllers.exceptions.NotFoundException;
 import com.cbf.producer.domain.Match;
+import com.cbf.producer.domain.Team;
 import com.cbf.producer.dtos.MatchDTO;
 import com.cbf.producer.repositories.MatchRepository;
 import lombok.AllArgsConstructor;
@@ -16,13 +17,18 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @AllArgsConstructor
 public class MatchService {
-    @Autowired
+
     private MatchRepository repository;
+    private TeamService teamService;
 
     @Transactional
     public Match save(MatchDTO matchDTO) {
         Match match = new Match();
         BeanUtils.copyProperties(matchDTO, match);
+        Team teamOne = teamService.getById(matchDTO.getTeamOne().getId());
+        Team teamTwo = teamService.getById(matchDTO.getTeamTwo().getId());
+        match.setTeamOne(teamOne);
+        match.setTeamTwo(teamTwo);
         return repository.save(match);
     }
 

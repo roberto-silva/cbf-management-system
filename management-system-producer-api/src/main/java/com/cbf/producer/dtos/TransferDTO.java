@@ -1,6 +1,7 @@
 package com.cbf.producer.dtos;
 
 import com.cbf.producer.core.dtos.ModelDTO;
+import com.cbf.producer.domain.Player;
 import com.cbf.producer.domain.Transfer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,11 +26,14 @@ public class TransferDTO extends ModelDTO {
 
     private Float value;
 
+    private PlayerDTO player;
+
     public TransferDTO(Transfer transfer) {
         this.id = transfer.getId();
         this.originTeam = new TeamDTO(transfer.getOriginTeam());
         this.destinyTeam = new TeamDTO(transfer.getDestinyTeam());
         this.date = transfer.getDate();
         this.value = transfer.getValue();
+        this.player = new PlayerDTO(transfer.getPlayer());
     }
 }

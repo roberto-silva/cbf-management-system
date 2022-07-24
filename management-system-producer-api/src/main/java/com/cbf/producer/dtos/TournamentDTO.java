@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
@@ -25,7 +26,7 @@ public class TournamentDTO extends ModelDTO {
 
     private LocalDate endDate;
 
-    private Set<Team> teams = new HashSet<>();
+    private Set<TeamDTO> teams = new HashSet<>();
 
     private Set<Match> matches = new HashSet<>();
 
@@ -34,7 +35,7 @@ public class TournamentDTO extends ModelDTO {
         this.name = tournament.getName();
         this.startDate = tournament.getStartDate();
         this.endDate = tournament.getEndDate();
-        this.teams = tournament.getTeams();
+        this.teams = tournament.getTeams().stream().map(TeamDTO::new).collect(Collectors.toSet());
         this.matches = tournament.getMatches();
     }
 

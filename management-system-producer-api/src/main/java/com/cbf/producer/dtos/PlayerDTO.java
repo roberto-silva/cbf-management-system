@@ -23,13 +23,12 @@ public class PlayerDTO extends ModelDTO {
 
     private String country;
 
-    private TeamDTO team;
+    private Long teamId;
 
     public PlayerDTO(Player player) {
        this.id = player.getId();
        this.name = player.getName();
        this.birthDate = player.getBirthDate();
        this.country = player.getCountry();
-       this.team = new TeamDTO(player.getTeam());
     }
 }

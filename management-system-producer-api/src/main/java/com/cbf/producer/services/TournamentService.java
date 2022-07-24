@@ -3,6 +3,7 @@ package com.cbf.producer.services;
 import com.cbf.producer.controllers.exceptions.BusinessRuleException;
 import com.cbf.producer.controllers.exceptions.NotFoundException;
 import com.cbf.producer.domain.Match;
+import com.cbf.producer.domain.Team;
 import com.cbf.producer.domain.Tournament;
 import com.cbf.producer.domain.enums.Status;
 import com.cbf.producer.dtos.MatchAdditionalTimeDTO;
@@ -13,40 +14,52 @@ import com.cbf.producer.util.Constants;
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
 @AllArgsConstructor
 public class TournamentService {
-    @Autowired
+
     private TournamentRepository repository;
 
-    @Autowired
     private MatchService matchService;
 
-    @Autowired
+    private TeamService teamService;
+
     private RabbitTemplate rabbitTemplate;
 
     @Transactional
-    public Tournament save(TournamentDTO matchDTO) {
-        Tournament match = new Tournament();
-        BeanUtils.copyProperties(matchDTO, match);
-        return repository.save(match);
+    public Tournament save(TournamentDTO tournamentDTO) {
+        Tournament tournament = new Tournament();
+        searchAndSetTeamsAndMatches(tournamentDTO, tournament);
+        return repository.save(tournament);
     }
 
     @Transactional
-    public Tournament update(Long id, TournamentDTO matchDTO) {
-        Tournament match = getById(id);
-        BeanUtils.copyProperties(matchDTO, match);
-        match = repository.save(match);
-        return match;
+    public Tournament update(Long id, TournamentDTO tournamentDTO) {
+        Tournament tournament = getById(id);
+        searchAndSetTeamsAndMatches(tournamentDTO, tournament);
+        return repository.save(tournament);
+    }
+
+    private void searchAndSetTeamsAndMatches(TournamentDTO tournamentDTO, Tournament tournament) {
+        BeanUtils.copyProperties(tournamentDTO, tournament);
+        Set<Team> teams = tournamentDTO.getTeams().stream()
+                .map(team -> teamService.getById(team.getId()))
+                .collect(Collectors.toSet());
+        Set<Match> matches = tournamentDTO.getMatches().stream()
+                .map(match -> matchService.getById(match.getId()))
+                .collect(Collectors.toSet());
+        tournament.setTeams(teams);
+        tournament.setMatches(matches);
     }
 
     public Tournament getById(Long id) {

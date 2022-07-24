@@ -2,11 +2,13 @@ package com.cbf.producer.services;
 
 import com.cbf.producer.controllers.exceptions.NotFoundException;
 import com.cbf.producer.domain.Player;
+import com.cbf.producer.domain.Team;
 import com.cbf.producer.dtos.PlayerDTO;
 import com.cbf.producer.repositories.PlayerRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -14,24 +16,29 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-@AllArgsConstructor
+@AllArgsConstructor(onConstructor = @__(@Lazy))
 public class PlayerService {
-    @Autowired
-    private PlayerRepository repository;
+
+    private final PlayerRepository repository;
+
+    @Lazy
+    private final TeamService teamService;
 
     @Transactional
     public Player save(PlayerDTO playerDTO) {
         Player player = new Player();
         BeanUtils.copyProperties(playerDTO, player);
-        return repository.save(player);
+        Team team = teamService.getById(playerDTO.getTeamId());
+        player = repository.save(player);
+        team.addPlayer(player);
+        return player;
     }
 
     @Transactional
     public Player update(Long id, PlayerDTO playerDTO) {
         Player player = getById(id);
         BeanUtils.copyProperties(playerDTO, player);
-        player = repository.save(player);
-        return player;
+        return repository.save(player);
     }
 
     public Player getById(Long id) {

@@ -29,9 +29,9 @@ public class MatchDTO extends ModelDTO {
 
     private Integer teamTwoScore = 0;
 
-    private Status status;
+    private Status status = Status.NOT_STARTED;
 
-    private Double time;
+    private Double time = 90.00;
 
     public MatchDTO(Match match) {
         this.id = match.getId();
