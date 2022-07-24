@@ -38,12 +38,24 @@ public class Team implements Serializable {
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "team_id")
     @Builder.Default
-    private Set<Player> teams = new HashSet<>();
+    private Set<Player> players = new HashSet<>();
 
     public Team(TeamDTO teamDTO) {
         this.id = teamDTO.getId();
         this.name = teamDTO.getName();
         this.locale = teamDTO.getLocale();
+    }
+
+    public Team(Long id) {
+        this.id = id;
+    }
+
+    public void addPlayer(Player player) {
+        this.players.add(player);
+    }
+
+    public void removePlayer(Player player) {
+        this.players.remove(player);
     }
 
 }

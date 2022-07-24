@@ -36,4 +36,8 @@ public class Transfer {
 
     @Column(name = "value", nullable = false)
     private Float value;
+
+    @ManyToOne
+    @JoinColumn(name = "player_id")
+    private Player player;
 }

@@ -1,6 +1,8 @@
 server:
   port: 8080
 spring:
+  main:
+    allow-circular-references: true
   datasource:
     url: jdbc:postgresql://localhost:5432/cbf?&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true
     username: postgres
@@ -8,7 +10,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
   rabbitmq:

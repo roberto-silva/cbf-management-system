@@ -35,15 +35,10 @@ public class Player implements Serializable {
     @Column(name = "country", nullable = false, length = 100)
     private String country;
 
-    @ManyToOne
-    @JoinColumn(name = "team_id")
-    private Team team;
-
     public Player(PlayerDTO playerDTO) {
         this.id = playerDTO.getId();
         this.name = playerDTO.getName();
         this.birthDate = playerDTO.getBirthDate();
         this.country = playerDTO.getCountry();
-        this.team = new Team(playerDTO.getTeam());
     }
 }
