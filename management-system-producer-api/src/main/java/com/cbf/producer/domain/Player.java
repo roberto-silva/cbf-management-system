@@ -1,5 +1,7 @@
 package com.cbf.producer.domain;
 
+import com.cbf.producer.dtos.PlayerDTO;
+import com.cbf.producer.dtos.TeamDTO;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -37,4 +39,11 @@ public class Player implements Serializable {
     @JoinColumn(name = "team_id")
     private Team team;
 
+    public Player(PlayerDTO playerDTO) {
+        this.id = playerDTO.getId();
+        this.name = playerDTO.getName();
+        this.birthDate = playerDTO.getBirthDate();
+        this.country = playerDTO.getCountry();
+        this.team = new Team(playerDTO.getTeam());
+    }
 }

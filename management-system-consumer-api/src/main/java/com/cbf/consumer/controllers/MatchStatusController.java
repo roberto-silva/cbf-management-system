@@ -1,6 +1,6 @@
 package com.cbf.consumer.controllers;
 
-import com.cbf.consumer.dtos.MatchStatusDTO;
+import com.cbf.consumer.dtos.MatchDTO;
 import com.cbf.consumer.services.MatchStatusService;
 import com.cbf.consumer.util.Constants;
 import com.google.gson.Gson;
@@ -21,9 +21,8 @@ public class MatchStatusController {
 
     @RabbitListener(queues = Constants.STATUS_QUEUE)
     public void consumer(Message message) {
-        System.out.println(message);
-//        JsonObject jsonObject = new JsonParser().parse(new String(message.getBody())).getAsJsonObject();
-//        MatchStatusDTO matchStatus = new Gson().fromJson(jsonObject, MatchStatusDTO.class);
-//        this.service.sendMessageToWebSocket(matchStatus);
+        JsonObject jsonObject = new JsonParser().parse(new String(message.getBody())).getAsJsonObject();
+        MatchDTO matchStatus = new Gson().fromJson(jsonObject, MatchDTO.class);
+        this.service.sendMessageToWebSocket(matchStatus);
     }
 }

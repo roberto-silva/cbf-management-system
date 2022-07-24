@@ -1,5 +1,6 @@
 package com.cbf.producer.domain;
 
+import com.cbf.producer.dtos.TeamDTO;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -39,5 +40,10 @@ public class Team implements Serializable {
     @Builder.Default
     private Set<Player> teams = new HashSet<>();
 
+    public Team(TeamDTO teamDTO) {
+        this.id = teamDTO.getId();
+        this.name = teamDTO.getName();
+        this.locale = teamDTO.getLocale();
+    }
 
 }
