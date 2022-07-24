@@ -12,23 +12,7 @@ export class AppComponent implements OnInit {
 
   private stompClient: Stomp.Client;
 
-  private teamOne: Team = new Team({id: 1, name: 'teamOne', locale: 'rio'});
-  private teamTwo: Team = new Team({id: 2, name: 'teamTwo', locale: 'rio'});
-  private match: Match = new Match(
-    {
-      id: 1,
-      date: '2022-01-01',
-      country: 'rio',
-      teamOne: this.teamOne,
-      teamTwo: this.teamTwo,
-      teamOneScore: 0,
-      teamTwoScore: 0,
-      status: Status.NOT_STARTED,
-      time: 0
-    }
-  );
-
-  matchList: Match[] = [this.match];
+  matchList: Match[] = [];
 
   constructor() {
   }
@@ -41,17 +25,37 @@ export class AppComponent implements OnInit {
     const ws = new SockJS('http://localhost:8081/socket');
     this.stompClient = Stomp.over(ws);
     this.stompClient.debug = (debug: any) => {
-      console.log(debug);
     };
 
     const that = this;
     this.stompClient.connect({}, (connect: any) => {
-      console.log(connect);
-      that.stompClient.subscribe(`testando`, (result: any) => {
-        console.log(result);
+      that.stompClient.subscribe(`STATUS`, (result: any) => {
+        const frame: any = new Object(result);
+        this.isExistSocket(new Match(JSON.parse(frame.body)));
       });
     });
   }
+
+  private isExistSocket(match: Match): void {
+    if (this.matchList.length) {
+      let currentIndex = 0;
+      let isExist = false;
+      this.matchList.forEach((item: any, index: number) => {
+        if (item.id === match.id) {
+          currentIndex = index;
+          isExist = true;
+        }
+      });
+      if (isExist) {
+        this.matchList[currentIndex] = match;
+      } else {
+        this.matchList.push(match);
+      }
+    } else {
+      this.matchList.push(match);
+    }
+  }
+
 }
 
 export class Team {

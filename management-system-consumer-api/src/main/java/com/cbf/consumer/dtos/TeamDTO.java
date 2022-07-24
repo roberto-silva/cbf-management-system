@@ -6,6 +6,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,4 +21,6 @@ public class TeamDTO extends ModelDTO {
     private String name;
 
     private String locale;
+
+    private Set<PlayerDTO> players = new HashSet<>();
 }

@@ -1,7 +1,9 @@
-<div class="row" *ngFor="let item of matchList">
-  <div class="col-lg-3">
-    <ng-container [ngTemplateOutlet]="matchTemplate"
-                  [ngTemplateOutletContext]="{item: item}"></ng-container>
+<div class="container mt-3 mb-3">
+  <div class="row" *ngFor="let item of matchList">
+    <div class="col-lg-4 mt-3 mb-3">
+      <ng-container [ngTemplateOutlet]="matchTemplate"
+                    [ngTemplateOutletContext]="{item: item}"></ng-container>
+    </div>
   </div>
 </div>
 
@@ -20,7 +22,7 @@
 </ng-template>
 
 <ng-template #matchCardHeaderTemplate let-item="item">
-  <div class="row">
+  <div class="row w-100">
     <div class="col-lg-6">
       <label>{{item?.date ? item?.date : '0000-00-00' | date: 'dd/MM/yyyy'}}</label>
     </div>
