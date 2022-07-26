@@ -1,6 +1,18 @@
 server:
   port: 8080
 spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cbf?&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
   rabbitmq:
     host: localhost
     port: 5672
