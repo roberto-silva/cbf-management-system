@@ -20,7 +20,7 @@ public class ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(BusinessRuleException.class)
-    public ResponseEntity<StandardError> objectNotFound(BusinessRuleException e, HttpServletRequest request) {
+    public ResponseEntity<StandardError> businessRule(BusinessRuleException e, HttpServletRequest request) {
 
         StandardError err = new StandardError(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(),
                 e.getMessage(), e.getMessage(), request.getRequestURI());
