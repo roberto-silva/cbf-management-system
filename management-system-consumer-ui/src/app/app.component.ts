@@ -75,6 +75,7 @@ export class AppComponent implements OnInit {
     const ws = new SockJS('http://localhost:8081/socket');
     this.stompClient = Stomp.over(ws);
     this.stompClient.debug = (debug: any) => {
+      console.log(debug);
     };
 
     const that = this;
@@ -87,6 +88,7 @@ export class AppComponent implements OnInit {
   }
 
   private isExistSocket(match: Match): void {
+    console.log(match);
     const newMatch: Match = match;
     newMatch.date = new Date(match.date);
     if (this.matchList.length) {
@@ -140,10 +142,10 @@ export class Team {
 }
 
 export enum Status {
-  NOT_STARTED = 0,
-  STARTED = 1,
-  BREAK = 2,
-  FINISHED = 3
+  NOT_STARTED = 'NOT_STARTED',
+  STARTED = 'STARTED',
+  BREAK = 'BREAK',
+  FINISHED = 'FINISHED'
 }
 
 export class Match {

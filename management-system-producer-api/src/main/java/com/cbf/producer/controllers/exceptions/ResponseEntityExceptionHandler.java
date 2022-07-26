@@ -15,7 +15,7 @@ public class ResponseEntityExceptionHandler {
     public ResponseEntity<StandardError> objectNotFound(NotFoundException e, HttpServletRequest request) {
 
         StandardError err = new StandardError(System.currentTimeMillis(), HttpStatus.NOT_FOUND.value(),
-                "Não encontrado", e.getMessage(), request.getRequestURI());
+                "Not Found", e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
     }
 

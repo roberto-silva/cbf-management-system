@@ -77,6 +77,7 @@ public class TournamentService {
     public void startMatch(Long id, Long matchId) {
         Match match = getMatchByTournamentAndMatchId(id, matchId);
         match.setDate(LocalDate.now());
+        match.setStatus(Status.STARTED);
         match = this.matchService.update(id, new MatchDTO(match));
         producerAMQPService.sendToRabbit(new MatchDTO(match));
     }
