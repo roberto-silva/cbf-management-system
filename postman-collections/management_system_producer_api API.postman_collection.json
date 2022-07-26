@@ -1,0 +1,1985 @@
+{
+	"info": {
+		"_postman_id": "d1fbea3f-dfb5-4e9e-9e18-e8a5eb4ed5ce",
+		"name": "management_system_producer_api API",
+		"description": "management_system_producer_api API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9422838"
+	},
+	"item": [
+		{
+			"name": "v1/api",
+			"item": [
+				{
+					"name": "matches",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "GET v1/api/matches/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/matches/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"matches",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/matches/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"matches",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "PUT v1/api/matches/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/matches/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"matches",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/matches/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"matches",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "DELETE v1/api/matches/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/matches/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"matches",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/matches/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"matches",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "GET v1/api/matches",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/matches",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"matches"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/matches",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"matches"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "POST v1/api/matches",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"2022-07-24\",\r\n    \"country\": \"Brazil\",\r\n    \"teamOne\": {\r\n        \"id\": 1\r\n    },\r\n    \"teamTwo\": {\r\n        \"id\": 2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/matches",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"matches"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/matches",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"matches"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "players",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "GET v1/api/players/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/players/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"players",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/players/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"players",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "PUT v1/api/players/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/players/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"players",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/players/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"players",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "DELETE v1/api/players/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/players/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"players",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/players/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"players",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "GET v1/api/players",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/players",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"players"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/players",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"players"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "POST v1/api/players",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Julio\",\r\n    \"locale\": \"GBA\",\r\n    \"birthDate\":\"2022-07-24\",\r\n    \"country\": \"Brazil\",\r\n    \"teamId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/players",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"players"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/players",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"players"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "teams",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "GET v1/api/teams/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/teams/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"teams",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/teams/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"teams",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "PUT v1/api/teams/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"RT Futebol Clube\",\r\n    \"locale\": \"RT\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/teams/2",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"teams",
+												"2"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/teams/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"teams",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "DELETE v1/api/teams/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/teams/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"teams",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/teams/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"teams",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "GET v1/api/teams",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/teams",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"teams"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/teams",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"teams"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "POST v1/api/teams",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"PE Futebol Clube\",\r\n    \"locale\": \"PE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/teams",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"teams"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/teams",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"teams"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "tournaments",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "matchs/{match Id}",
+									"item": [
+										{
+											"name": "PATCH v1/api/tournaments/{id}/matchs/{matchId}/add-time",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/tournaments/1/matchs/1/add-time",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"tournaments",
+														"1",
+														"matchs",
+														"1",
+														"add-time"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/v1/api/tournaments/:id/matchs/:matchId/add-time",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"v1",
+																"api",
+																"tournaments",
+																":id",
+																"matchs",
+																":matchId",
+																"add-time"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "PATCH v1/api/tournaments/{id}/matchs/{matchId}/break",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/tournaments/:id/matchs/:matchId/break",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"tournaments",
+														":id",
+														"matchs",
+														":matchId",
+														"break"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														},
+														{
+															"key": "matchId",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/v1/api/tournaments/:id/matchs/:matchId/break",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"v1",
+																"api",
+																"tournaments",
+																":id",
+																"matchs",
+																":matchId",
+																"break"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "PATCH v1/api/tournaments/{id}/matchs/{matchId}/end",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/tournaments/:id/matchs/:matchId/end",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"tournaments",
+														":id",
+														"matchs",
+														":matchId",
+														"end"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														},
+														{
+															"key": "matchId",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/v1/api/tournaments/:id/matchs/:matchId/end",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"v1",
+																"api",
+																"tournaments",
+																":id",
+																"matchs",
+																":matchId",
+																"end"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "PATCH v1/api/tournaments/{id}/matchs/{matchId}/start",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/tournaments/5/matchs/1/start",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"tournaments",
+														"5",
+														"matchs",
+														"1",
+														"start"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/v1/api/tournaments/:id/matchs/:matchId/start",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"v1",
+																"api",
+																"tournaments",
+																":id",
+																"matchs",
+																":matchId",
+																"start"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "PATCH v1/api/tournaments/{id}/matchs/{matchId}/teams/{teamsId}/gol",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/tournaments/:id/matchs/:matchId/teams/:teamsId/gol",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"tournaments",
+														":id",
+														"matchs",
+														":matchId",
+														"teams",
+														":teamsId",
+														"gol"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														},
+														{
+															"key": "matchId",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														},
+														{
+															"key": "teamsId",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/v1/api/tournaments/:id/matchs/:matchId/teams/:teamsId/gol",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"v1",
+																"api",
+																"tournaments",
+																":id",
+																"matchs",
+																":matchId",
+																"teams",
+																":teamsId",
+																"gol"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "teamsId",
+																	"value": "-45087124.67829099",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GET v1/api/tournaments/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/tournaments/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"tournaments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/tournaments/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"tournaments",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "PUT v1/api/tournaments/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/tournaments/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"tournaments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/tournaments/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"tournaments",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "DELETE v1/api/tournaments/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/tournaments/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"tournaments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/tournaments/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"tournaments",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "GET v1/api/tournaments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/tournaments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"tournaments"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/tournaments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"tournaments"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "POST v1/api/tournaments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"RT X PE\",\r\n    \"startDate\": \"2022-07-24\",\r\n    \"endDate\": \"2022-07-30\",\r\n    \"teams\": [\r\n        {\r\n            \"id\": 1\r\n        },\r\n        {\r\n            \"id\": 2\r\n        }\r\n    ],\r\n    \"matches\": [\r\n        {\r\n            \"id\": 1\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/tournaments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"tournaments"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/tournaments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"tournaments"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "transfers",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "GET v1/api/transfers/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/transfers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"transfers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/transfers/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"transfers",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "PUT v1/api/transfers/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/transfers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"transfers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/transfers/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"transfers",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "DELETE v1/api/transfers/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/transfers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"transfers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-45087124.67829099",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/transfers/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"transfers",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-45087124.67829099",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "GET v1/api/transfers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/transfers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"transfers"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/transfers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"transfers"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "POST v1/api/transfers",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"originTeam\": {\r\n        \"id\": 1\r\n    },\r\n    \"destinyTeam\": {\r\n        \"id\": 2\r\n    },\r\n    \"date\": \"2022-07-24\",\r\n    \"value\": 9000000,\r\n    \"player\": {\r\n        \"id\": 1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/api/transfers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"transfers"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/transfers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"transfers"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://management_system_producer_api",
+			"type": "string"
+		}
+	]
+}
